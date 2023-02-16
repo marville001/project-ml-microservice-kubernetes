@@ -6,10 +6,16 @@
 # Step 1:
 # Create dockerpath
 # dockerpath=<your docker ID/path>
+dockerpath="marville001/python-app"
+imagename="python-app"
 
 # Step 2:  
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
+docker login
+docker tag $imagename $dockerpath
+
 
 # Step 3:
 # Push image to a docker repository
+docker push $dockerpath
